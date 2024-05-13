@@ -1,0 +1,29 @@
+@use 'config'
+//----------------
+//media query
+//----------------
+
+@mixin pc 
+  @media screen and (min-width: config.$breakpoint)
+    @content
+
+@mixin sp
+  @media screen and (max-width: config.$breakpoint)
+    @content
+
+
+//----------------
+//responsive font size
+// arg ラフ上のフォントサイズ(px)
+//----------------
+@mixin font-size-responsive($size: 30px)
+    font-size: ($size/($base_wide_sp/100))*1vw
+
+//----------------
+//縦書き
+//----------------
+@mixin tategaki()
+    -webkit-writing-mode: vertical-rl
+    -ms-writing-mode: tb-rl
+    writing-mode: vertical-rl
+    font-feature-settings: 'pkna'

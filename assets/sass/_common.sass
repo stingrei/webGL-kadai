@@ -1,0 +1,43 @@
+@use 'config'
+@use 'mixins'
+@forward 'destyle'
+    
+
+html 
+    font-size: calc(10/16)*100% 
+    body 
+        -webkit-font-smoothing: antialiased 
+        -moz-osx-font-smoothing: grayscale 
+        font-size: 1rem
+        .clearfix 
+            display: inline-block 
+            height: 1% 
+            &::after
+                clear: both 
+                content: '.' 
+                display: block 
+                height: 0 
+                visibility: hidden 
+        img 
+            width: 100% 
+            height: auto 
+        @include mixins.pc
+            .pc
+                display: block
+            .sp
+                display: none !important 
+        @include mixins.sp
+            .sp
+                display: block
+            .pc
+                display: none !important 
+        .scroll-in 
+            opacity: 0 
+            transform: translateY(20px) 
+            &.show
+                opacity: 1 
+                transition: .5s ease 
+                transform: none 
+        @font-face 
+            font-family: 'HelveticaNeue-Bold' 
+            src: url(../font/helvetica-neue/HelveticaNeue-Bold.eot) 
