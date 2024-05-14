@@ -30,6 +30,14 @@ class ThreeApp {
     position: new THREE.Vector3(5, 10, .5)
   }
 
+  static POINT_LIGHT_PARAM = {
+    color: 0xffffff,
+    intensity: 15,
+    distance: 0,
+    decay: 2,
+    position: new THREE.Vector3(10, 10, 0)
+  }
+
   static AMBIENT_LIGHT_PARAM = {
     color: 0xffffff,
     intensity: .3
@@ -43,6 +51,7 @@ class ThreeApp {
   scene;
   camera;
   directionalLight;
+  pointLight;
   ambientLight;
   boxGeometry;
   boxArray;
@@ -81,12 +90,21 @@ class ThreeApp {
     this.camera.position.copy(ThreeApp.CAMERA_PARAM.position)
     this.camera.lookAt(ThreeApp.CAMERA_PARAM.lookAt)
 
-    this.directionalLight = new THREE.DirectionalLight(
-      ThreeApp.DIRECTIONAL_LIGHT_PARAM.color,
-      ThreeApp.DIRECTIONAL_LIGHT_PARAM.intensity
+    // this.directionalLight = new THREE.DirectionalLight(
+    //   ThreeApp.DIRECTIONAL_LIGHT_PARAM.color,
+    //   ThreeApp.DIRECTIONAL_LIGHT_PARAM.intensity
+    // )
+    // this.directionalLight.position.copy(ThreeApp.DIRECTIONAL_LIGHT_PARAM.position)
+    // this.scene.add(this.directionalLight)
+
+    this.pointLight = new THREE.PointLight(
+      ThreeApp.POINT_LIGHT_PARAM.color,
+      ThreeApp.POINT_LIGHT_PARAM.intensity,
+      ThreeApp.POINT_LIGHT_PARAM.distance,
+      ThreeApp.POINT_LIGHT_PARAM.decay,
     )
-    this.directionalLight.position.copy(ThreeApp.DIRECTIONAL_LIGHT_PARAM.position)
-    this.scene.add(this.directionalLight)
+    this.pointLight.position.copy(ThreeApp.POINT_LIGHT_PARAM.position)
+    this.scene.add(this.pointLight)
 
     this.ambientLight = new THREE.AmbientLight(
       ThreeApp.AMBIENT_LIGHT_PARAM.color,
@@ -127,7 +145,7 @@ class ThreeApp {
 
     const axesBarLength = 5
     this.axesHelper = new THREE.AxesHelper(axesBarLength)
-    this.scene.add(this.axesHelper)
+    // this.scene.add(this.axesHelper)
 
     this.controls = new OrbitControls(this.camera, this.renderer.domElement)
 
@@ -162,14 +180,9 @@ class ThreeApp {
     this.controls.update()
 
     if(this.isDown) {
-      // this.scene.rotation.y += 0.05
-      this.directionalLight.position.x -= .1
-      this.directionalLight.position.y -= .1
-      if(this.directionalLight.position.x < -5){
-        this.directionalLight.position.x = 5        
-      }
-      if(this.directionalLight.position.y < 0){
-        this.directionalLight.position.y = 10
+      this.pointLight.position.x -= .1
+      if(this.pointLight.position.x < -10){
+        this.pointLight.position.x = 10        
       }
 
     }
