@@ -1,0 +1,15 @@
+extends ../_base.pug
+block pageInfo
+    -
+        var title = '講義３';
+        var description = '';
+        var ogpimg = '';
+        var date = '';
+        var url = '';
+        var siteName = '';
+        var keywords = '';
+block meta
+    link(rel="stylesheet", href="../assets/css/style.css")
+block body 
+    #webgl
+    script(src='../assets/js/kougi3.js', type="module")

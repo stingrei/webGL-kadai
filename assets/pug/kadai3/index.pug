@@ -1,0 +1,23 @@
+extends ../_base.pug
+block pageInfo
+    -
+        var title = '課題３';
+        var description = '';
+        var ogpimg = '';
+        var date = '';
+        var url = '';
+        var siteName = '';
+        var keywords = '';
+block meta
+    link(rel="stylesheet", href="../assets/css/kadai3.css")
+block body 
+    #webgl
+
+    .buttons 
+        button.button.current(data-latitude=35.68, data-longitude=-139.83) TOKYO
+        button.button(data-latitude=40.77, data-longitude=73.90) NEW YORK 
+        button.button(data-latitude=51.507, data-longitude=0) LONDON
+        button.button(data-latitude=-22.54, data-longitude=43.11) RIO DE JANEIRO
+        button.button(data-latitude=-33.52, data-longitude=-151.12) SYDNEY
+        button.button(data-latitude=90, data-longitude=0) NORTH POLE
+    script(src='../assets/js/kadai3.js', type="module")

@@ -13,7 +13,6 @@
     "watch:pug2html": "pug assets/pug/ --hierarchy -o dist/ -w -P",
     "watch:server": "browser-sync start --server dist --files 'dist, **/*.html, !node_modules/**/*'",
     "watch:css": "watch 'npm run css' ./assets/sass",
-    "watch:js": "watch 'npm run js' ./assets/js",
     "watch": "npm-run-all -p watch:*"
   },
   "author": "",
@@ -36,6 +35,5 @@
     ">0.25% in JP",
     "not ie <= 10",
     "not op_mini all"
-  ],
-  "type": "module"
+  ]
 }
