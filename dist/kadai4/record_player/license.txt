@@ -1,0 +1,8 @@
+Model Information:
+* title:	record player
+* source:	https://sketchfab.com/3d-models/record-player-7a425ef684084d45b43c350874a76c9e
+* author:	hectopod (https://sketchfab.com/hectopod)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
