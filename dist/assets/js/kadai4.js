@@ -111,6 +111,7 @@ class ThreeApp {
         this.hoverVinyl = intersects[0].object
         document.querySelector('body').classList.add('hover')
       }else{
+        this.hoverVinyl = ''
         document.querySelector('body').classList.remove('hover')
       }
     }, false)
@@ -127,6 +128,8 @@ class ThreeApp {
       })
       if(intersects.length > 0){
         this.clickVinyl = intersects[0].object
+      }else{
+        this.clickVinyl = ''
       }
     }, false)
 
@@ -315,6 +318,12 @@ class ThreeApp {
           }
         }
       }
+    }else{
+      for(let i = 0; i < this.vinylArray.length; ++i) {
+        if (this.vinylArray[i].position.x > 0) {
+          this.vinylArray[i].position.x -= 0.1
+        }
+      }
     }
 
     if (this.hoverVinyl) {
@@ -326,6 +335,12 @@ class ThreeApp {
           if (this.vinylArray[i].position.x > 0) {
             this.vinylArray[i].position.x -= 0.1
           }
+        }
+      }
+    }else{
+      for(let i = 0; i < this.vinylArray.length; ++i) {
+        if (this.vinylArray[i].position.x > 0) {
+          this.vinylArray[i].position.x -= 0.1
         }
       }
     }
