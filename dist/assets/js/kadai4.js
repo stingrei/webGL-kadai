@@ -319,9 +319,11 @@ class ThreeApp {
         }
       }
     }else{
-      for(let i = 0; i < this.vinylArray.length; ++i) {
-        if (this.vinylArray[i].position.x > 0) {
-          this.vinylArray[i].position.x -= 0.1
+      if (!this.hoverVinyl) {
+        for(let i = 0; i < this.vinylArray.length; ++i) {
+          if (this.vinylArray[i].position.x > 0) {
+            this.vinylArray[i].position.x -= 0.1
+          }
         }
       }
     }
