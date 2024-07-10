@@ -17,7 +17,7 @@ class ThreeApp {
     aspect: window.innerWidth / window.innerHeight,
     near: 0.1,
     far: 50.0,
-    position: new THREE.Vector3(0.0, 2.0, 10.0),
+    position: new THREE.Vector3(3.0, 2.0, 10.0),
     lookAt: new THREE.Vector3(0.0, 0.0, 0.0)
   }
 
